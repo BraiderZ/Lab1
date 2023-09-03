@@ -1,13 +1,13 @@
 #!/bin/bash
 
 get_permissions_verbose() {
-	echo "$1"
+	permisos_usuario="${1:1:3}"
+	echo "$permisos_usuario"
+	permisos_grupo="${1:4:3}"
+        echo "$permisos_grupo"
+	permisos_otros="${1:7:3}"
+        echo "$permisos_otros"
 }
-
-
-
-
-
 
 
 if [ $# -lt 1 ]; then
@@ -23,7 +23,7 @@ if [ ! -e $1 ]; then
 	exit 1
 fi
 
-permisos= stat -c "%A" $1
+permisos=$(stat -c "%A" "$1")
 
 get_permissions_verbose "$permisos"
 
