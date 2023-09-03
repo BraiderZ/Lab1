@@ -1,5 +1,15 @@
 #!/bin/bash
 
+get_permissions_verbose() {
+	echo "$1"
+}
+
+
+
+
+
+
+
 if [ $# -lt 1 ]; then
 	echo "Error: agregue un archivo como argumento."
 	exit 1
@@ -15,5 +25,5 @@ fi
 
 permisos= stat -c "%A" $1
 
-echo "$permisos"
+get_permissions_verbose "$permisos"
 
