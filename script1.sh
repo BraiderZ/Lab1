@@ -12,3 +12,8 @@ if [ ! -e $1 ]; then
 	echo "Error: el archivo $1 no existe."
 	exit 1
 fi
+
+permisos= stat -c "%A" $1
+
+echo "$permisos"
+
