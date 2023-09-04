@@ -20,4 +20,7 @@ else
   sudo groupadd $2
 fi
 
+sudo usermod -aG $2 luis
+sudo usermod -aG $2 $1
 
+exit 0
