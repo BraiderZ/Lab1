@@ -8,4 +8,9 @@ elif [ $# -gt 2 ]; then
         exit 1
 fi
 
+if id "$1" &>/dev/null; then
+  echo "El usuario $1 ya existe."
+else
+  sudo useradd $1
+fi
 
