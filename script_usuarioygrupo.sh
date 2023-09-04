@@ -20,9 +20,13 @@ else
   sudo groupadd $2
 fi
 
+sudo chown :$2 script_permisos.sh
+
 usuario_default=$(whoami)
 
 sudo usermod -aG $2 $usuario_default
 sudo usermod -aG $2 $1
+
+sudo chmod g+x script_permisos.sh
 
 exit 0
