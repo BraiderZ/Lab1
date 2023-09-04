@@ -20,7 +20,9 @@ else
   sudo groupadd $2
 fi
 
-sudo usermod -aG $2 luis
+usuario_default=$(whoami)
+
+sudo usermod -aG $2 $usuario_default
 sudo usermod -aG $2 $1
 
 exit 0
