@@ -14,3 +14,10 @@ else
   sudo useradd $1
 fi
 
+if getent group "$2" &>/dev/null; then
+  echo "El grupo $2 ya existe."
+else
+  sudo groupadd $2
+fi
+
+
